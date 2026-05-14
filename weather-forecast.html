@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast | Gyanti Multiservices</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .weather-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .weather-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .weather-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .weather-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sunny {
+            color: #f1c40f;
+        }
+
+        .cloudy {
+            color: #95a5a6;
+        }
+
+        .rainy {
+            color: #3498db;
+        }
+
+        .temp {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .day {
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav" class="scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/gyanti_official_logo.png" alt="Gyanti Farming" class="logo-img">
+                <div class="logo-text">
+                    <span class="brand-name">Gyanti</span>
+                    <span class="brand-tagline">Farming</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="cow-farming.html">Cow Farming</a></li>
+                        <li><a href="goat-farming.html">Goat Farming</a></li>
+                        <li><a href="poultry-farming.html">Poultry Farming</a></li>
+                        <li><a href="beekeeping.html">Beekeeping</a></li>
+                        <li><a href="fish-farming.html">Fish Farming</a></li>
+                    </ul>
+                </li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="index.html#contact" class="btn-primary">Contact Us</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header"
+        style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/farming_slider_2_1778761298662.png') center/cover;">
+        <div class="container">
+            <h1>Weather Forecast</h1>
+            <p>Accurate agricultural weather updates for Bharuwa Samerpur and surrounding areas.</p>
+        </div>
+    </section>
+
+    <!-- Weather Forecast Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">7-Day Forecast</span>
+                <h2>Plan Your Farming Week</h2>
+            </div>
+            <div class="weather-grid">
+                <div class="weather-card" data-reveal="bottom">
+                    <p class="day">Mon</p>
+                    <div class="weather-icon sunny"><i class="fas fa-sun"></i></div>
+                    <p class="temp">32°C</p>
+                    <p>Clear Sky</p>
+                </div>
+                <div class="weather-card" data-reveal="bottom" data-delay="100">
+                    <p class="day">Tue</p>
+                    <div class="weather-icon sunny"><i class="fas fa-sun"></i></div>
+                    <p class="temp">34°C</p>
+                    <p>Mostly Sunny</p>
+                </div>
+                <div class="weather-card" data-reveal="bottom" data-delay="200">
+                    <p class="day">Wed</p>
+                    <div class="weather-icon cloudy"><i class="fas fa-cloud-sun"></i></div>
+                    <p class="temp">30°C</p>
+                    <p>Partly Cloudy</p>
+                </div>
+                <div class="weather-card" data-reveal="bottom" data-delay="300">
+                    <p class="day">Thu</p>
+                    <div class="weather-icon rainy"><i class="fas fa-cloud-showers-heavy"></i></div>
+                    <p class="temp">26°C</p>
+                    <p>Light Rain</p>
+                </div>
+                <div class="weather-card" data-reveal="bottom" data-delay="400">
+                    <p class="day">Fri</p>
+                    <div class="weather-icon rainy"><i class="fas fa-bolt"></i></div>
+                    <p class="temp">25°C</p>
+                    <p>Thunderstorms</p>
+                </div>
+                <div class="weather-card" data-reveal="bottom" data-delay="500">
+                    <p class="day">Sat</p>
+                    <div class="weather-icon cloudy"><i class="fas fa-cloud"></i></div>
+                    <p class="temp">28°C</p>
+                    <p>Cloudy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="index.html" class="logo" style="margin-bottom: 2rem;">
+                        <img src="images/gyanti_official_logo.png" alt="Gyanti Farming" class="logo-img">
+                        <div class="logo-text">
+                            <span class="brand-name" style="color: white;">Gyanti</span>
+                            <span class="brand-tagline" style="color: #aaa;">Farming</span>
+                        </div>
+                    </a>
+                    <p>Gyanti Multiservices Pvt. Ltd. - Leading the way in sustainable and smart agriculture solutions
+                        for a better tomorrow.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="farmers-guide.html">Farmer's Guide</a></li>
+                        <li><a href="market-prices.html">Market Prices</a></li>
+                        <li><a href="weather-forecast.html">Weather Forecast</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Bharuwa Samerpur, UP</li>
+                        <li><i class="fas fa-phone-alt"></i> +91 73111 12659</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gyanti Multiservices Pvt. Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

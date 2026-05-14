@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Prices | Gyanti Multiservices</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .price-table th,
+        .price-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+        }
+
+        .price-up {
+            color: #27ae60;
+            font-weight: 700;
+        }
+
+        .price-down {
+            color: #e74c3c;
+            font-weight: 700;
+        }
+
+        .trend-icon {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav" class="scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/gyanti_official_logo.png" alt="Gyanti Farming" class="logo-img">
+                <div class="logo-text">
+                    <span class="brand-name">Gyanti</span>
+                    <span class="brand-tagline">Farming</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="cow-farming.html">Cow Farming</a></li>
+                        <li><a href="goat-farming.html">Goat Farming</a></li>
+                        <li><a href="poultry-farming.html">Poultry Farming</a></li>
+                        <li><a href="beekeeping.html">Beekeeping</a></li>
+                        <li><a href="fish-farming.html">Fish Farming</a></li>
+                    </ul>
+                </li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="index.html#contact" class="btn-primary">Contact Us</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header"
+        style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/cta_farming_image_1778760579493.png') center/cover;">
+        <div class="container">
+            <h1>Market Prices</h1>
+            <p>Real-time livestock and crop market trends for the Uttar Pradesh region.</p>
+        </div>
+    </section>
+
+    <!-- Prices Table Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Live Updates</span>
+                <h2>Regional Mandi Prices</h2>
+            </div>
+            <table class="price-table" data-reveal="bottom">
+                <thead>
+                    <tr>
+                        <th>Commodity</th>
+                        <th>Category</th>
+                        <th>Price (per Quintal/Unit)</th>
+                        <th>Trend</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>A2 Cow Milk</strong></td>
+                        <td>Dairy</td>
+                        <td>₹65 / Liter</td>
+                        <td class="price-up"><i class="fas fa-caret-up trend-icon"></i> +2.5%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Organic Wheat</strong></td>
+                        <td>Crops</td>
+                        <td>₹2,800 / Quintal</td>
+                        <td class="price-up"><i class="fas fa-caret-up trend-icon"></i> +1.2%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sirohi Goat</strong></td>
+                        <td>Livestock</td>
+                        <td>₹12,000 / Animal</td>
+                        <td class="price-down"><i class="fas fa-caret-down trend-icon"></i> -0.8%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Multi-floral Honey</strong></td>
+                        <td>Apiculture</td>
+                        <td>₹450 / Kg</td>
+                        <td class="price-up"><i class="fas fa-caret-up trend-icon"></i> +5.0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tilapia Fish</strong></td>
+                        <td>Aquaculture</td>
+                        <td>₹180 / Kg</td>
+                        <td class="price-up"><i class="fas fa-caret-up trend-icon"></i> +0.5%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Poultry (Broiler)</strong></td>
+                        <td>Livestock</td>
+                        <td>₹110 / Kg</td>
+                        <td class="price-down"><i class="fas fa-caret-down trend-icon"></i> -3.2%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="index.html" class="logo" style="margin-bottom: 2rem;">
+                        <img src="images/gyanti_official_logo.png" alt="Gyanti Farming" class="logo-img">
+                        <div class="logo-text">
+                            <span class="brand-name" style="color: white;">Gyanti</span>
+                            <span class="brand-tagline" style="color: #aaa;">Farming</span>
+                        </div>
+                    </a>
+                    <p>Gyanti Multiservices Pvt. Ltd. - Leading the way in sustainable and smart agriculture solutions
+                        for a better tomorrow.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="farmers-guide.html">Farmer's Guide</a></li>
+                        <li><a href="market-prices.html">Market Prices</a></li>
+                        <li><a href="weather-forecast.html">Weather Forecast</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Bharuwa Samerpur, UP</li>
+                        <li><i class="fas fa-phone-alt"></i> +91 73111 12659</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gyanti Multiservices Pvt. Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
