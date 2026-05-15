@@ -85,16 +85,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    if (menuToggle) {
+    if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            // Toggle icon between bars and times (X)
+            const isOpen = navLinks.classList.contains('active');
+            
+            // Toggle icon with rotation
             const icon = menuToggle.querySelector('i');
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
+            if (icon) {
+                icon.style.transform = 'rotate(90deg)';
+                setTimeout(() => {
+                    icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+                    icon.style.transform = 'rotate(0deg)';
+                }, 150);
             }
+
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = isOpen ? 'hidden' : 'initial';
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                document.body.style.overflow = 'initial';
+                const icon = menuToggle.querySelector('i');
+                if (icon) icon.className = 'fas fa-bars';
+            });
         });
     }
 
@@ -102,31 +119,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
         const link = dropdown.querySelector('a');
-        link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 1024) {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-            }
-        });
-    });
-
-    // Close menu when a sub-link is clicked
-    document.querySelectorAll('.dropdown-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            dropdowns.forEach(d => d.classList.remove('active'));
-            const icon = menuToggle.querySelector('i');
-            if (icon) icon.classList.replace('fa-times', 'fa-bars');
-        });
-    });
-
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            const icon = menuToggle.querySelector('i');
-            if (icon) icon.classList.replace('fa-times', 'fa-bars');
-        });
+        if (link) {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    const isOpen = dropdown.classList.contains('active');
+                    if (!isOpen) {
+                        e.preventDefault();
+                        dropdowns.forEach(d => d.classList.remove('active')); // Close others
+                        dropdown.classList.add('active');
+                    }
+                }
+            });
+        }
     });
 
     // 6. Hero Background Slider
